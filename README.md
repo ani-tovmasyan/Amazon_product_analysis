@@ -1,5 +1,8 @@
 # Amazon_product_analysis
 
+Ani Tovmasyan
+Nune Tadevosyan
+
 # Amazon Product Data Scraping Script
 
 ## Overview
