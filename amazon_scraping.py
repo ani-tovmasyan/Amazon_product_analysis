@@ -17,8 +17,7 @@ class AmazonScraper:
         # Creating a dictionary of the required columns
         self.data_dict = {'product name': [], 'brand': [], 'date first available':[], 'ranking': [], 'number of ratings': [], 
                     'star rating': [], 'price(in dollar)': [], 'color': [], 'compatible devices': [], 'connectivity technology': [], 
-                    'connector type': [], 'date first available':[], 'product url': [],'ranking': []}
-        # Creating a data frame with those columns
+                    'connector type': [], 'date first available':[], 'product url': []}
         self.data = pd.DataFrame(self.data_dict)
 
     # Scrolling down the page in order to overcome Lazy Loading
@@ -182,8 +181,8 @@ class AmazonScraper:
         for page in range(1,pages):               # to iterate over the 2 pages in which the products are divided into
             start_url = os.path.join(url, f'ref=zg_bs_pg_{page}?_encoding=UTF8&pg={page}')
             driver.get(start_url)
-            self.lazy_loading()                     # to overcome lazy loading
-            self.fetch_product_links_and_ranks()    # to fetch the links to products 
+            self.lazy_loading()                     
+            self.fetch_product_links_and_ranks()     
      
         # Assigning the scraped links and rankings to the columns 'product url' and 'ranking'
         self.data['product url'] = product_links
